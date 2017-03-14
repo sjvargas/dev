@@ -1,0 +1,16 @@
+<h1>Posts#index</h1>
+
+
+<%= @posts.each do |post| %>
+	<h2><%= post.title%></h2>
+	<div><%= truncate(post.body, :length =>150 )%></div>
+	<br>
+	<%if post.body.length <=150%>
+	<div>(fin)</div>
+	<%else%>
+	<div>(continua...)</div>
+	<%end%>
+	<%=  link_to "Read Post", post%>
+	
+<%end%>
+
